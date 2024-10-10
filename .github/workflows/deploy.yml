@@ -28,6 +28,6 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
           publish_dir: ./build
           force_orphan: true
